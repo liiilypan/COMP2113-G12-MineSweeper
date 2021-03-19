@@ -27,7 +27,7 @@ Features:
 •	Use “if” statement to determine whether the player want to mark a bomb or check the number  
 •	If player input is “b”, use a function to replace the “0” in chosen grid of game table with “*”, then print the updated table with number of remaining bombs  
 •	If player input is “n”, check the chosen grid in base table: if it contains a bomb, output “BOMB!!!”, use a function to ask the player whether to re-start the game; otherwise, use a function to replace the “0” in chosen grid of game table with the number shown in the base table, then print the updated table with number of remaining bombs  
-•	if player input is “r”, use a function to remove the bomb mark in game table, which means replacing “*” with “0”, then print the updated table with number of remaining bombs
+•	if player input is “r”, use a function to remove the bomb mark in game table, which means replacing “*” with “0”, then print the updated table with number of remaining bombs  
 •	if player input is “?”, use a function to replace “*” or “0” in the chosen grid with question mark “?”, then print the updated table with number of remaining bombs  
 3. Determining the result  
 •	In the main() function, use a function to compare whether the game board is the same as the base board: if return is true, print “WIN!!!” and ask the player whether to re-start the game; if return is false, let player continue to input  
