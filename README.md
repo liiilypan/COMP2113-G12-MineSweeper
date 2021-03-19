@@ -10,7 +10,7 @@ Description: The program will randomly generate a 10\*15 grid board with 25 hidd
 With this number clues, the player needs to find out all the bombs and mark them without detonating any of them.  
 
 Rules: 
-The program will first generate a 10\*15 grid board with all grids zero. (consider it as a 10*15 matrix).  
+The program will first generate a 10\*15 grid board with all grids zero. (consider it as a 10\*15 matrix).  
 When the player wants to open a grid to see the hidden number, (s)he will need to first enter “n”, then enter i, j that denotes the position of the grid (i-th row, j-th column). If the grid contains a number, the program will print a updated board showing the number in grid[i][j], as well as the number of remaining bombs. Otherwise, if the grid contains a bomb, the program will output “BOMB!!!”and ask the player whether (s)he will re-start a game or not.  
 When the player wants to mark a grid with bombs, (s)he will need to first enter “b”, then enter i, j that denotes the position of the grid (i-th row, j-th column).  
 When the player wants to remove a bomb mark, (s)he will need to first enter “r”, then enter i, j that denotes the position of the grid (i-th row, j-th column).  
