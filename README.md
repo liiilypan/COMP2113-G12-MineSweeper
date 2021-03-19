@@ -32,7 +32,7 @@ Features:
 3. Determine the result  
 •	In the main() function, use a function to compare whether the game board is the same as the base board: if return is true, print "WIN!!!" and ask the player whether to re-start the game; if return is false, let player continue to input  
 4. Quit the game  
-•	The player can quit the game whenever they want by inputing "q", the program will use a function to identify their input and then lead to the process of saving game status  
+•	The player can quit the game whenever they want by inputting "q", the program will use a function to identify their input and then lead to the process of saving game status  
 5. Save/Load system:  
 •	Use some functions to create a TXT document to store the important data in the current game progress to achieve the effect of saving the game status  
 •	Use some functions to read the information stored in TXT and achieve the effect of loading the previous game status  
