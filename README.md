@@ -2,6 +2,9 @@
 
 COMP2113 Group Project  
 Game: MineSweeper  
+Team numbers:  
+Pan Chen  
+Shi Shuhan 3035534189  
 
 Description: The program will randomly generate a 10*15 grid board with 25 hidden bombs on it. The rest of the 125 grids contains numbers 0-8 which indicate how many neighboring bombs.  
 With this number clues, the player needs to find out all the bombs and mark them without detonating any of them.  
