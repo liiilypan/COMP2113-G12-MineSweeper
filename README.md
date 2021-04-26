@@ -18,12 +18,12 @@ When all the grids in the board are filled with numbers and "*", the program wil
 
 Features:  
 
-1. Add structure to store the game status: (Code Requirement 2) 
+1. Add structure to store the game status: (Code Requirement 2)  
 • a 2-D C-string to store the base board of current game  
-• a 2-D C-string to store the updated game boarch after executing player's commands 
+• a 2-D C-string to store the updated game boarch after executing player's commands  
 • an interger to store the number of remaining bombs that the player needs to detect  
 2. Generate a 10\*15 grid base board with hidden bombs and numbers: (Code Requirement 1)  
-•	Use "char" to generate a 10\*15 base table, where the 1st row and column are used as the axis  
+•	Use "char" to generate a 10\*15 base table
 •	Use "rand()": using time as seed to generate the 35 bombs in the table previous created  
 •	Use a function to determine the number of neighboring bombs of the rest 115 grids  
 3. Generate a 10\*15 blank game board to store the player's input  
@@ -33,7 +33,7 @@ Features:
 • If player input is "n", check the chosen grid in base table: if it contains a bomb, output "BOMB!!!", use a function to ask the player whether to re-start the game; otherwise, use a function to replace the "0" in chosen grid of game table with the number shown in the base table, then print the updated table with number of remaining bombs  
 •	if player input is "r", use a function to remove the bomb mark in game table, which means replacing "\*" with "0", then print the updated table with number of remaining bombs  
 •	if player input is "?", use a function to replace "\*" or "0" in the chosen grid with question mark "?", then print the updated table with number of remaining bombs  
-5. Print the updated game table
+5. Print the updated game table  
 •	after the player inputs the command and the grid coordinate, the program will print the updated game table
 •	the opened grids with numbers and the determined bombs will be shown in the print table, while the unopened grids remain blank
 6. Determine the result  
