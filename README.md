@@ -17,28 +17,33 @@ When the player is uncertain about a grid, (s)he can first enter "?", then enter
 When all the grids in the board are filled with numbers and "*", the program will output "WIN!!!" and ask the player whether (s)he will re-start a game or not.  
 
 Features:  
-1. Generate a 10\*15 grid board with hidden bombs and numbers:  
+
+1. Add structure to store the game status: (Code Requirement 2) 
+• a 2-D C-string to store the base board of current game  
+• a 2-D C-string to store the updated game boarch after executing player's commands 
+• an interger to store the number of remaining bombs that the player needs to detect  
+2. Generate a 10\*15 grid base board with hidden bombs and numbers: (Code Requirement 1)  
 •	Use "char" to generate a 10\*15 base table, where the 1st row and column are used as the axis  
 •	Use "rand()": using time as seed to generate the 35 bombs in the table previous created  
 •	Use a function to determine the number of neighboring bombs of the rest 115 grids  
-2. Store player’s inputs:  
-•	Use "char" to generate a new 10\*15 game table    
+3. Generate a 10\*15 blank game board to store the player's input  
+4. Store player’s inputs:    
 •	Use "if" statement to determine whether the player want to mark a bomb or check the number  
 •	If player input is "b", use a function to replace the "0" in chosen grid of game table with "\*" then print the updated table with number of remaining bombs  
 • If player input is "n", check the chosen grid in base table: if it contains a bomb, output "BOMB!!!", use a function to ask the player whether to re-start the game; otherwise, use a function to replace the "0" in chosen grid of game table with the number shown in the base table, then print the updated table with number of remaining bombs  
 •	if player input is "r", use a function to remove the bomb mark in game table, which means replacing "\*" with "0", then print the updated table with number of remaining bombs  
 •	if player input is "?", use a function to replace "\*" or "0" in the chosen grid with question mark "?", then print the updated table with number of remaining bombs  
-3. Print the updated game table
+5. Print the updated game table
 •	after the player inputs the command and the grid coordinate, the program will print the updated game table
 •	the opened grids with numbers and the determined bombs will be shown in the print table, while the unopened grids remain blank
-4. Determine the result  
+6. Determine the result  
 •	In the main() function, use a function to compare whether the game board is the same as the base board: if return is true, print "WIN!!!" and ask the player whether to re-start the game; if return is false, let player continue to input  
-5. Quit the game  
+7. Quit the game  
 •	The player can quit the game whenever they want by inputting "q", the program will use a function to identify their input and then lead to the process of saving game status  
-6. Save/Load system:  
+8. Save/Load system: (Code Requirement 4)  
 •	Use some functions to create a TXT document to store the important data in the current game progress to achieve the effect of saving the game status  
 •	Use some functions to read the information stored in TXT and achieve the effect of loading the previous game status  
-7. Modularization:  
+9. Modularization:  
 •	Put the codes in multiple files to facilitate modularization management  
 
 Assumptions:
