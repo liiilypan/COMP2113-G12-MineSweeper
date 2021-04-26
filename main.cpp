@@ -253,6 +253,7 @@ void readArchive() {
         for(int i=0; i<10; i++) {
             for(int j=0; j<15; j++) {
                 fin1 >> game.game[i][j]; // Read the previously-saved game board information from "game_archive.txt"
+                if( game.game[i][j] == '-' ) game.game[i][j] = 32;
                 fin2 >> game.base[i][j]; // Read the previously-saved game's base board information from "base_archive.txt"
             }
         }
@@ -275,9 +276,12 @@ void writeArchive() {
     else {
         for(int i=0; i<10; i++) {
             for(int j=0; j<15; j++) {
-                fout1 << game.game[i][j]; // Save the current game board information to "game_archive.txt"
+                if( game.game[i][j] == 32 ) fout1 << '-'; // Save the current game board information to "game_archive.txt"
+                else fout1 << game.game[i][j];
                 fout2 << game.base[i][j]; // Save this game's base board information to "base_archive.txt"
             }
+            fout1 << endl;
+            fout2 << endl;
         }
         cout << "Game status saved." << endl;
     }
