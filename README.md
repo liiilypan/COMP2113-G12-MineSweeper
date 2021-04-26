@@ -40,3 +40,7 @@ Features:
 •	Put the codes in multiple files to facilitate modularization management  
 7. Timekeeping:  
 •	Use time() to record the player's play time and display it at the end of the game  
+
+Assumptions:
+1. player will enter only 5 kinds of commands after the game starts: "b", "r", "n", "?" and "Q"
+2. when denoting the coordinate of the grid, player will first enter a row number between 1 and 10 (1 and 10 included),then enter a column number between 1 and 15 (1 and 15 included)
