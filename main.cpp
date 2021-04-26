@@ -370,6 +370,7 @@ int main() {
             baseBoard(); // Generate a new base board, overwrite the previous game status record
             gameBoard(); // Generate an empty game board, clear the previous game status record
             //printBoard(game.base); check whether the base board generated is correct or not
+            bonus(game.rBomb);
             cout << "\n";
         }
 
