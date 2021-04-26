@@ -10,9 +10,9 @@ The program will randomly generate a 10\*15 grid board with 35 hidden bombs on i
 With these numbers as clues, the player needs to find out all the bombs and mark them without detonating them.  
 
 Rules:  
-The program will first ask th player whether to resume the previous game.  
+At the beginning, the program will first ask th player whether to resume the previous game.  
 Then it prints the most updated game board with at least 9 grids's content already shown as hints.  
-Then player starts t detect th bombs and input commands:  
+Then the player starts to detect the bombs and input the commands:  
 • When the player wants to open a grid to see the hidden number, (s)he will need first to enter the command "n", then enter i, j that denotes the coordinate of the grid (i-th row, j-th column). If the grid contains a number, the program will print a updated board showing the number in grid[i][j], as well as the number of remaining bombs. Otherwise, if the grid contains a bomb, the program will output "BOMB!!!" and ask the player whether (s)he will re-start a game or not.  
 • When the player wants to mark a grid with bombs, (s)he will need first to enter "b", then enter the grid's coordinate. Then the bomb will be marked.  
 • When the player wants to remove a bomb mark, (s)he will need first to enter "r", then enter the grid's coordinate. Then the bomb mark will be removed.  
