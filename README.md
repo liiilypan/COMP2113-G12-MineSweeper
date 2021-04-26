@@ -23,6 +23,7 @@ Features:
 • a 2-D C-string to store the updated game boarch after executing player's commands  
 • an interger to store the number of remaining bombs that the player needs to detect  
 2. Generate a 10\*15 grid base board with hidden bombs and numbers: (Code Requirement 1)  
+• base board is used as a standard for the program to decide winning or lossing  
 •	Use "char" to generate a 10\*15 base table  
 •	Use "rand()": using time as seed to generate the 35 bombs in the table previous created  
 •	Use a function to determine the number of neighboring bombs of the rest 115 grids  
