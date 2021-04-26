@@ -40,9 +40,7 @@ Features:
 •	Use some functions to read the information stored in TXT and achieve the effect of loading the previous game status  
 7. Modularization:  
 •	Put the codes in multiple files to facilitate modularization management  
-8. Timekeeping:  
-•	Use time() to record the player's play time and display it at the end of the game  
 
 Assumptions:
 1. player will enter only 5 kinds of commands after the game starts: "b", "r", "n", "?" and "Q"
-2. when denoting the coordinate of the grid, player will first enter a row number between 1 and 10 (1 and 10 included),then enter a column number between 1 and 15 (1 and 15 included)
+2. when denoting the coordinate of the grid, player will first enter a row number between 1 and 10 (1 and 10 included),then enter a space, last enter a column number between 1 and 15 (1 and 15 included) e.g. "3 6" 
