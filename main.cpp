@@ -9,12 +9,13 @@ struct gameStatus{ // Data structure to store the game status
     char base[10][15]; // Create a 2-D C-string to store the information of a base board,
                        // which contains 25 randomly-generated bombs
     char game[10][15]; // Create a 2-D C-string to store the information of a game board for player use
+    int rBomb; // Count the remaining bombs that the player needs to detect
 };
 gameStatus game;
 
 int again = 1; // Create variable for storing the value of whether to start a new game
 int endGame = 1; // Create a variable for counting the number of commands that the player inputs;
-                 // determining whether a game ends or not, "0" denotes end,
+                 // determining whether a game ends or not, "0" denotes end
 
 
 // Decide the number of neighboring bombs
@@ -161,6 +162,26 @@ void checkrcInput(int & row, int & col ) {
     }
 }
 
+// Bonus at the start of a new game
+// Print a randomly selected 3*3 grids
+// Make the game friendlier to the player, give hints at the beginning
+void bonus(int & b) {
+    srand(time(NULL));
+    int x = rand() % 8 + 1;
+    int y = rand() % 13 +1;
+    while( game.game[x][y] == '*' ) {
+        x = rand() % 8 + 1;
+        y = rand() % 13 +1;
+    }
+    game.game[x][y] = game.base[x][y];
+    for(int i=(x-1); i<=(x+1); i++) {
+        for(int j=(y-1); j<=(y+1); j++ ) {
+            if( game.base[i][j] == '*' ) b--;
+            game.game[i][j] = game.base[i][j];
+        }
+    }
+}
+
 // Mark the bomb in the game board as the player command
 void markBomb(int row, int col) {
     game.game[row-1][col-1] = '*';
@@ -250,6 +271,8 @@ void readArchive() {
         cout << "Initiating a new game..." << endl;
     }
     else {
+        fin1 >> game.rBomb; // Read the number of remaining bombs that the player needs to detect
+
         for(int i=0; i<10; i++) {
             for(int j=0; j<15; j++) {
                 fin1 >> game.game[i][j]; // Read the previously-saved game board information from "game_archive.txt"
@@ -274,6 +297,8 @@ void writeArchive() {
         cout << "Game status is not saved, sorry..." << endl;
     }
     else {
+        fout1 << game.rBomb << endl; // Save the number of remaining bombs that the player needs to detect
+
         for(int i=0; i<10; i++) {
             for(int j=0; j<15; j++) {
                 if( game.game[i][j] == 32 ) fout1 << '-'; // Save the current game board information to "game_archive.txt"
@@ -309,7 +334,9 @@ int main() {
 
     while (again != 0) { // Start a new game
         endGame = 1; // Reset the variable for counting the number of commands that the player inputs;
-                     // determining whether a game ends or not, "0" denotes end,
+                     // determining whether a game ends or not, "0" denotes end
+
+        game.rBomb = 35; // Count the remaining bombs that the player needs to detect
 
         // If this is the second game, need to ask whether to resume the game or not
         if( again == 1 ) {
@@ -330,7 +357,8 @@ int main() {
                 cout << "Starting a new game..." << endl;
                 baseBoard(); // Generate a new base board
                 gameBoard(); // Generate an empty game board
-                printBoard(game.base);
+                // printBoard(game.base); check whether the base board generated is correct or not
+                bonus(game.rBomb);
                 cout << "\n";
             }
         }
@@ -341,15 +369,18 @@ int main() {
             cout << "Starting a new game..." << endl;
             baseBoard(); // Generate a new base board, overwrite the previous game status record
             gameBoard(); // Generate an empty game board, clear the previous game status record
-            printBoard(game.base);
+            //printBoard(game.base); check whether the base board generated is correct or not
             cout << "\n";
         }
 
-        int remainB = 35; // Count the remaining bombs that the player needs to detect
 
         while ( endGame != 0 ) {
+
+            endGame++; // Update the variable for counting the number of commands that the player inputs;
+                       // determining whether a game ends or not, "0" denotes end
+
             printBoard(game.game);
-            cout << remainB << " bombs to go." <<endl;
+            cout << game.rBomb << " bombs to go." <<endl;
 
             // Receive player's command and update the game board according to their inputs
             char input;
@@ -361,7 +392,7 @@ int main() {
                 cin >> row >> col;
                 //checkrcInput(row, col);
                 markBomb(row, col);
-                remainB--;
+                game.rBomb--;
                 if (whetherWin()) win();
             }
 
@@ -370,7 +401,7 @@ int main() {
                 cin >> row >> col;
                 //checkrcInput(row, col);
                 removeBomb(row, col);
-                remainB++;
+                game.rBomb++;
             }
 
                 // If the player want to open a grid
