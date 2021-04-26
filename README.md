@@ -5,16 +5,20 @@ Game: MineSweeper
 Team numbers: 12  
 Pan Chen 3035534828     
 
-Description: The program will randomly generate a 10\*15 grid board with 35 hidden bombs on it. The rest of the 115 grids contains numbers 0-8 which indicate how many neighboring bombs.  
+Description:  
+The program will randomly generate a 10\*15 grid board with 35 hidden bombs on it. The rest of the 115 grids contains numbers 0-8 which indicate how many neighboring bombs.  
 With these numbers as clues, the player needs to find out all the bombs and mark them without detonating them.  
 
-Rules: 
-The program will first generate a 10\*15 grid board with all grids zero. (consider it as a 10\*15 matrix).  
-When the player wants to open a grid to see the hidden number, (s)he will need first to enter "n", then enter i, j that denotes the position of the grid (i-th row, j-th column). If the grid contains a number, the program will print a updated board showing the number in grid[i][j], as well as the number of remaining bombs. Otherwise, if the grid contains a bomb, the program will output "BOMB!!!" and ask the player whether (s)he will re-start a game or not.  
-When the player wants to mark a grid with bombs, (s)he will need first to enter "b", then enter i, j that denotes the position of the grid (i-th row, j-th column).  
-When the player wants to remove a bomb mark, (s)he will need first to enter "r", then enter i, j that denotes the position of the grid (i-th row, j-th column).  
-When the player is uncertain about a grid, (s)he can first enter "?", then enter i, j that denotes the position of the grid (i-th row, j-th column) to mark the grid with uncertainty.  
-When all the grids in the board are filled with numbers and "*", the program will output "WIN!!!" and ask the player whether (s)he will re-start a game or not.  
+Rules:  
+The program will first ask th player whether to resume the previous game.  
+Then it prints the most updated game board with at least 9 grids's content already shown as hints.  
+Then player starts t detect th bombs and input commands:  
+• When the player wants to open a grid to see the hidden number, (s)he will need first to enter the command "n", then enter i, j that denotes the coordinate of the grid (i-th row, j-th column). If the grid contains a number, the program will print a updated board showing the number in grid[i][j], as well as the number of remaining bombs. Otherwise, if the grid contains a bomb, the program will output "BOMB!!!" and ask the player whether (s)he will re-start a game or not.  
+• When the player wants to mark a grid with bombs, (s)he will need first to enter "b", then enter the grid's coordinate. Then the bomb will be marked.  
+• When the player wants to remove a bomb mark, (s)he will need first to enter "r", then enter the grid's coordinate. Then the bomb mark will be removed.  
+• When the player is uncertain about a grid, (s)he can first enter "?", then enter the grid's coordinate to mark the grid with uncertainty.  
+• When the player wants to quit the game, (s)he will need to enter th command "Q". Then the program will ask (s)he whether to store the current game status.
+If all the grids in the board are correctly filled with numbers and "*", the program will output "WIN!!!" and ask the player whether (s)he will re-start a game or not.  
 
 Features:  
 
