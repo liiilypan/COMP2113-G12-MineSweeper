@@ -17,7 +17,7 @@ Then the player starts to detect the bombs and input the commands:
 • When the player wants to mark a grid with bombs, (s)he will need first to enter "b", then enter the grid's coordinate. Then the bomb will be marked.  
 • When the player wants to remove a bomb mark, (s)he will need first to enter "r", then enter the grid's coordinate. Then the bomb mark will be removed.  
 • When the player is uncertain about a grid, (s)he can first enter "?", then enter the grid's coordinate to mark the grid with uncertainty.  
-• When the player wants to quit the game, (s)he will need to enter th command "Q". Then the program will ask (s)he whether to store the current game status.
+• When the player wants to quit the game, (s)he will need to enter th command "Q". Then the program will ask (s)he whether to store the current game status.  
 If all the grids in the board are correctly filled with numbers and "*", the program will output "WIN!!!" and ask the player whether (s)he will re-start a game or not.  
 
 Features:  
